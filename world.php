@@ -12,7 +12,7 @@ $stmt = $conn->query("SELECT * FROM countries where name like '%$country%' ");
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt2 = $conn->query("SELECT * FROM countires join cities on cities.country_code = countries.code where name like '%$country%'");
+$stmt2 = $conn->query("SELECT * FROM countries join cities on cities.country_code = countries.code where countries.name like '%$country%' ");
 
 $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
@@ -41,7 +41,7 @@ $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 <?php else: ?>
 
-<tr>independence_year
+<tr>
         <th>Name</th>
         <th>Continent</th>
         <th>Inpendence</th>
